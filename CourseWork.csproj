@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{9CEA8E4C-B95C-49A9-B092-2C183AC52973}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Object_oriented_programming</RootNamespace>
+        <AssemblyName>Object_oriented_programming</AssemblyName>
+        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="DataBase\DataBase.cs" />
+        <Compile Include="DataBase\ParserDB.cs" />
+        <Compile Include="Product\IProductService.cs" />
+        <Compile Include="Product\ProductService.cs" />
+        <Compile Include="Product\Product.cs" />
+        <Compile Include="Start.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Purchase\PurchaseService.cs" />
+        <Compile Include="Purchase\PurchaseData.cs" />
+        <Compile Include="UI\Controllers\AddProductController.cs" />
+        <Compile Include="UI\Controllers\AuthorizationController.cs" />
+        <Compile Include="UI\Controllers\BuyProductController.cs" />
+        <Compile Include="UI\Controllers\DataBaseController.cs" />
+        <Compile Include="UI\Controllers\ExitController.cs" />
+        <Compile Include="UI\Controllers\MainController.cs" />
+        <Compile Include="UI\Controllers\ShowProductController.cs" />
+        <Compile Include="UI\Controllers\UserController.cs" />
+        <Compile Include="UI\IControllerService.cs" />
+        <Compile Include="User\IUserService.cs" />
+        <Compile Include="User\PasswordService.cs" />
+        <Compile Include="User\User.cs" />
+        <Compile Include="User\UserService.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="DataBase\Files\Products.json" />
+      <Content Include="DataBase\Files\Users.json" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
